@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .finished{
+        text-decoration: underline;
+    }
+    </style>
+    <script src="../vue.js"></script>
+</head>
+<body>
+   
+    <div id="app">
+        <h1 v-text="title"></h1>
+        <input v-model="newItem" @keyup.enter="addItem">
+    <ul>
+        <li v-for="item in items" 
+        v-bind:class="{finished:item.isFinished}"
+        @click="toggleFinish(item)">{{item.label}}
+            </li>
+    </ul>
+</div>
+<script>
+new Vue({
+    el:"#app",
+    data:{
+  title:"this is a todo list",
+  items:[
+     
+  ],
+  newItem:""
+    },
+    methods:{
+        toggleFinished:function(){
+            item.isfinished=!item.isFinished
+        },
+        addItem:function(){
+            this.items.push({
+                label:this.newItem,
+                isFinished:false
+            })
+            this.newItem=""
+        }
+    }
+})
+
+</script>
+</body>
+</html>
