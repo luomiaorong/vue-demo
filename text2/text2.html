@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/text.css"/>
+    <script src="vue.js"/>
+    </script>
+</head>
+<body>
+    <div class="app">
+        <div class="app-1">
+            <a href="javascript:;" @click="tabId(index)" :class="{'tab':'tabId===0'}">html</a>
+            <a href="javascript:;" @click="tabId" :class="{'tab':'tabId===1'}">css</a>
+            <a href="javascript:;" @click="tabId" :class="{'tab':'tabId===2'}">javascript</a>
+            <a href="javascript:;" @click="tabId" :class="{'tab':'tabId===3'}">vue</a>
+        </div>
+        <div>
+            <span v-show="tabId=0">html</span>
+            <span  v-show="tabId=1">css</span>
+            <span  v-show="tabId=2">javacript</span>
+            <span  v-show="tabId=3">vue</span>
+
+        </div>
+    </div>
+    <script>
+    new Vue({
+        el:".app",
+        data:{
+             tabId:0,
+        },
+        motheds:{
+         tabId:function(index){
+             
+             
+         
+         }
+        }
+    })
+    </script>
+</body>
+</html>

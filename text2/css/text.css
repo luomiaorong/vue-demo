@@ -1,0 +1,26 @@
+.app{
+    font-family:"微软雅黑";
+    height:800px;
+    width:800px;
+    border:1px solid #888;
+    margin:0 auto;
+}
+.app-1{
+    height:50px;
+    width:800px;
+    background-color:#665;
+    
+}
+.app-1 a{
+display:inline-block;
+text-decoration:none;
+color:#333;
+padding:60px;
+text-align:center;
+line-height:50px;
+}
+
+.app-1 .tab{
+    background:#09f;
+    color:#fff;
+}
