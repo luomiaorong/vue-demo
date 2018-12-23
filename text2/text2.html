@@ -15,7 +15,7 @@
             <a href="javascript:;" v-for="n in tabNum" @click="fTabClick(n)" :class="{'tab':'tabId===n'}">{{n}}</a>
             
         </div>
-        <div>
+        <div class="tab-con">
             <span v-show="tabId==1">html</span>
             <span  v-show="tabId==2">css</span>
             <span  v-show="tabId==3">javacript</span>
@@ -32,7 +32,7 @@
         },
         methods:{
          fTabClick:function(n){
-             this.tabNum=n;
+             this.tabId=n;
          }
         }
     })
