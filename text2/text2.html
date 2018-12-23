@@ -12,16 +12,14 @@
 <body>
     <div class="app">
         <div class="app-1">
-            <a href="javascript:;" @click="tabId(index)" :class="{'tab':'tabId===0'}">html</a>
-            <a href="javascript:;" @click="tabId" :class="{'tab':'tabId===1'}">css</a>
-            <a href="javascript:;" @click="tabId" :class="{'tab':'tabId===2'}">javascript</a>
-            <a href="javascript:;" @click="tabId" :class="{'tab':'tabId===3'}">vue</a>
+            <a href="javascript:;" v-for="n in tabNum" @click="fTabClick(n)" :class="{'tab':'tabId===n'}">{{n}}</a>
+            
         </div>
         <div>
-            <span v-show="tabId=0">html</span>
-            <span  v-show="tabId=1">css</span>
-            <span  v-show="tabId=2">javacript</span>
-            <span  v-show="tabId=3">vue</span>
+            <span v-show="tabId==1">html</span>
+            <span  v-show="tabId==2">css</span>
+            <span  v-show="tabId==3">javacript</span>
+            <span  v-show="tabId==4">vue</span>
 
         </div>
     </div>
@@ -30,12 +28,11 @@
         el:".app",
         data:{
              tabId:0,
+             tabNum:4,
         },
-        motheds:{
-         tabId:function(index){
-             
-             
-         
+        methods:{
+         fTabClick:function(n){
+             this.tabNum=n;
          }
         }
     })
