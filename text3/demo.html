@@ -27,9 +27,9 @@
             <li class="li1" v-for="(item,index) in prolist" 
                  :class="{'eidting':curIndex===index}">
                 <div>
-                    <span class="status-span"  @click="changeType(index)" :class="{'status-end':item.status}"></span>
+                    <span class="status-span"  @click="changeType(item)" :class="{'status-end':item.status}"></span>
                     <span>{{item.name}}</span>
-                    <span class="close">X</span>
+                    <span class="close" @click="delete(index)">X</span>
                 </div>
                 <input type="text" class="text2">
             </li>
@@ -54,23 +54,26 @@
                 curType:0,
             },
             computed:{
-                  noend:function(){
+                noend:function(){
                      
-                  }
+                }
             },
             methods: {
                addList:function(e){
                    if(e.keyCode==13){
                         this.prolist.push({
-                        name:this.addText,
-                        status:false
-                    }),
-                    this.addText="";
-                   }
+                            name:this.addText,
+                            status:false
+                        }),
+                        this.addText="";
+                    }
                    
                },
-               changeType:function(){
-                    item.status.true
+               changeType:function(item){
+                    item.status=true;
+               },
+               delete:function(index){
+                   this.prolist.splice(index,1)
                }
             }
         })
